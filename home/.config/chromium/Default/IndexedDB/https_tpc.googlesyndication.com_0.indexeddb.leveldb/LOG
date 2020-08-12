@@ -1,0 +1,5 @@
+2020/08/08-12:32:31.413 6e040 Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_tpc.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/08-12:32:45.866 28f67 Level-0 table #5: started
+2020/08/08-12:32:45.906 28f67 Level-0 table #5: 360 bytes OK
+2020/08/08-12:32:45.964 28f67 Delete type=0 #3
+2020/08/08-12:32:45.965 28f67 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

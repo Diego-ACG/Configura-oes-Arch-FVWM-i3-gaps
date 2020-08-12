@@ -1,0 +1,518 @@
+
+[colors]
+background = #1c3146
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+
+#==============================
+
+[bar/max_close]
+width = 6%
+height = 2%
+offset-x = 93.9%
+offset-y = 0.2%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+background =   #1c3146
+foreground = ${colors.foreground}
+
+font-0 = Iosevka:style=Bold:size=13;3
+font-1= Font Awesome:size 5 Brands:size=14;2
+
+modules-left = max_close
+
+cursor-click = pointer
+cursor-scroll = true
+
+[module/max_close]
+type = custom/text
+content =%{A1:i3-msg floating toggle:}%{B#009cb1}  %{A}  %{B}%{B#d54f4b}%{A1:i3-msg kill:}     %{A}%{B}
+
+#==============================
+
+[bar/mybar]
+width = 6%
+height = 2%
+offset-x = 93.9%
+offset-y = 2.2%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+background =  #9E232323
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=14;2
+font-1 = Ubuntu:style=Bold:size=11;2
+font-2 = Ubuntu:style=Bold:size=9;2
+font-3 = Iosevka:style=Bold:size=13;3
+;font-4 = Noto Color Emoji:pixelsize=10
+
+modules-center = i3
+
+cursor-click = pointer
+cursor-scroll = true
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+
+format = <label-state>
+
+label-focused-font = 3
+label-focused = 
+label-focused-foreground = #adff00
+label-focused-padding = 1
+
+label-unfocused-font = 3
+label-unfocused = ⭘
+label-unfocused-foreground = #fff
+label-unfocused-padding = 1
+
+label-visible-font = 3
+label-visible = 
+label-visible-foreground = #ff0000
+label-visible-padding = 1
+
+label-urgent-font = 3
+label-urgent = ⭘
+label-urgent-foreground = #ff0000
+label-urgent-padding = 1
+
+#=====================================
+
+[bar/date]
+width = 6%
+height = 3.5%
+offset-x = 93.9%
+offset-y = 4.2%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+line-size = 3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+;font-0 = Ubuntu:style=Bold:size=28;5
+;font-1 = Iosevka:style=Bold:size=12;2
+font-0= Open24DisplayST:style=Bold:size=26;5
+
+modules-center = date
+
+[module/date]
+type = custom/script
+exec = date '+%{F#f13939}%H%{F}:%{F#f13939}%M%{F}'
+interval = 0,1
+
+#===============================
+
+[bar/date1]
+width = 6%
+height = 2.9%
+offset-x = 93.9%
+offset-y = 7.9%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+;font-0 = Ubuntu:style=Bold:size=28;5
+;font-1 = Iosevka:style=Bold:size=12;2
+font-0= Open24DisplayST:style=Bold:size=14;5
+
+modules-center = date1
+
+[module/date1]
+type = custom/script
+exec = date '+%{F#63d955}%d%{F}/%{F#63d955}%m%{F}/%{F#63d955}%y'
+inteval = 1
+
+#===============================
+
+[bar/clima]
+width = 6%
+height = 3.9%
+offset-x = 93.9%
+offset-y = 43.3%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+line-size = 6
+
+background =  #AD1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;2
+font-1 = Iosevka:style=Bold:size=13;3
+font-2 = Font Awesome:size=10;2
+font-3 = NotoColorEmoji:size 10;2
+
+modules-center = clima
+
+[module/clima]
+type = custom/script
+exec = sh ~/.config/polybar/clima.sh
+inteval = 1
+
+#===============================
+
+[bar/infoicon]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 14.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;2
+font-1 = Iosevka:style=Bold:size=12;2
+
+modules-left = unicicon
+
+[module/unicicon]
+type = custom/script
+exec = sh ~/.config/polybar/icon.sh
+inteval = 0.1
+
+#===============================
+
+[bar/info]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 17.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+background = #9E1c3146
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #80dd2e
+
+
+font-0 = Ubuntu:style=Bold:size=11;2
+font-1 = Iosevka:style=Bold:size=12;2
+
+modules-left = unic
+
+[module/unic]
+type = custom/script
+exec = sh ~/.config/polybar/pacman.sh
+interval = 0,1
+
+#=====================================
+
+[bar/cpmicon]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 20.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=11;2
+font-1 = Iosevka:style=Bold:size=13;2
+font-2= Font Awesome :size=10;2
+
+modules-left = cpmicon
+
+[module/cpmicon]
+type = custom/script
+exec = sh ~/.config/polybar/cpmicon.sh
+inteval = 0.1
+
+#===============================
+
+[bar/cpumem]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 23.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;2
+font-1 = Iosevka:style=Bold:size=11;2
+
+modules-left = cpumem
+
+[module/cpumem]
+type = custom/script
+exec = sh ~/.config/polybar/cpumem.sh
+inteval = 0.1
+
+#===============================
+
+[bar/disks]
+width = 6%
+height = 4%
+offset-x = 93.9%
+offset-y = 10.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+line-size = 3
+
+background =   #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=11;2
+font-1 = Iosevka:style=Bold:size=11;2
+
+modules-left = disks
+
+[module/disks]
+type = custom/script
+exec = sh ~/.config/polybar/disks.sh
+inteval = 0.1
+
+#===============================
+
+[bar/seconds]
+width = 3.8%
+height = 0.1%
+offset-x = 95%
+offset-y = 7.8%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+
+line-size = 3
+
+background =   #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=3;2
+font-1 = Iosevka:style=Bold:size=2
+
+modules-left = seconds
+
+[module/seconds]
+type = custom/script
+exec = sh ~/.config/polybar/seconds.sh
+interval = 0,1
+
+#===============================
+
+[bar/arch]
+width = 6%
+height = 8.3%
+offset-x = 93.9%
+offset-y = 32%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+line-size = 5
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;4
+font-1 = Iosevka:style=Bold:size=55;12
+font-2= Font Awesome:size=10;2
+
+modules-center= arch
+
+[module/arch]
+type = custom/script
+exec = sh .config/polybar/arch.sh
+interval = 0.1
+
+#===============================
+
+[bar/slogan]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 40.3%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+line-size = 5
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;4
+font-1 = Iosevka:style=Bold:size=55;12
+font-2= Font Awesome:size=10;2
+
+modules-center= slogan
+
+[module/slogan]
+type = custom/script
+exec = sh .config/polybar/slogan.sh
+interval = 0.1
+
+#===============================
+
+[bar/low]
+width = 6%
+height = 6%
+offset-x = 93.9%
+offset-y = 49%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+line-size = 3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=10;2
+font-1 = Iosevka:style=Bold:size=18;3
+font-2= Font Awesome :size=10;2
+
+modules-left = low
+
+[module/low]
+type = custom/script
+exec = sh ~/.config/polybar/low.sh 2> /dev/null
+inteval = 0.1
+
+#===============================
+
+[bar/util]
+width = 6%
+height = 6%
+offset-x = 93.9%
+offset-y = 55%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+line-size = 3
+
+background =  #9E1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=11;2
+font-1 = Iosevka:style=Bold:size=18;5
+font-2= Font Awesome:size=10;2
+
+modules-left = util
+
+[module/util]
+type = custom/script
+exec = sh ~/.config/polybar/util.sh 2> /dev/null
+inteval = 0.1
+
+#===============================
+
+[bar/power]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 96.7%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+background =  #1c3146
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=11;2
+font-1 = Iosevka:style=Bold:size=13;3
+font-2= Font Awesome:size=10;2
+
+modules-left = power
+
+[module/power]
+type = custom/script
+exec = sh ~/.config/polybar/power.sh
+inteval = 0.1
+
+#===============================
+
+[bar/tray]
+width = 6%
+height = 3%
+offset-x = 93.9%
+offset-y = 93.5%
+radius = 0
+fixed-center = false
+override-redirect = true
+wm-restack = i3
+cursor-click = pointer
+
+tray-position = right
+
+background =  #00000000
+foreground = ${colors.foreground}
+
+font-0 = Ubuntu:style=Bold:size=11;2
+;font-1 = Iosevka:style=Bold:size=13;3
+;font-2= Font Awesome:size=10;2
+
+modules-left = tray
+
+[module/tray]
+type = custom/text
+content = 
+
+#===============================
+
+

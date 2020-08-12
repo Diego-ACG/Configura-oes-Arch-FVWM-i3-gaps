@@ -1,0 +1,38 @@
+WindowTitle {Pacman}
+WindowSize  120 84	# Taille
+Font		"xft:iosevka:style=Bold:size=10"
+
+Init
+ Begin
+  Set $MainColorset=(GetScriptArgument 1)
+  If $MainColorset <> {} Then
+  Begin
+   ChangeColorset 0 $MainColorset
+   ChangeColorset 1 $MainColorset
+  End
+  Set $tmp = (GetOutput {exec /home/diego/.fvwm/scripts/pacman.sh} 1 -1)
+  ChangeTitle 1 $tmp
+End
+
+PeriodicTasks
+ Begin 
+  If (RemainderOfDiv (GetTime) 30)==0 Then
+  Begin
+    Set $tmp = (GetOutput {exec /home/diego/.fvwm/scripts/pacman.sh}} 1 -1)
+    ChangeTitle  1 $tmp
+  End
+End
+
+Widget 1
+Property
+ Position 0 10
+ Size 120 15
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End

@@ -1,0 +1,578 @@
+
+## Set The Thumbnail Cache Folder
+SetEnv cache $[HOME].fvwm/cache/
+
+## Set The Scripts Folder
+SetEnv scripts $[HOME].fvwm/scripts
+
+## Where The Titlebar Icons Are Stored
+SetEnv icons $[HOME]/.fvwm/icons
+
+
+
+
+InfoStoreAdd terminal xfce4-terminal
+
+###########
+# 1: Functions
+#
+# Fvwm can use custom functions for various tasks.
+# The syntax for defining a function named FunctionName is:
+#
+#   DestroyFunc FunctionName
+#   AddToFunc FunctionName
+#   + I [Action to do Immediately]
+#   + C [Action to do on a Mouse Click]
+#   + D [Action to do on a Mouse Double Click]
+#   + H [Action to do on a Mouse Hold]
+#   + M [Action to do on a Mouse Motion]
+###########
+
+# Start Function
+#
+# The start function is run right after fvwm is done reading
+# the config file. This function run after each restart
+# so using Test (Init) or Test (Restart) can further control
+# actions that are run during the first time run (Init) or
+# actions that are run after a restart.
+DestroyFunc StartFunction
+AddToFunc   StartFunction
+#+ I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
+#    Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
+#+ I TestRc (NoMatch) Exec exec fvwm-root \
+#    $[FVWM_DATADIR]/default-config/images/background/bg1.png
+#+ I Test (Init) Module FvwmBanner
++ I Module FvwmButtons RightPanel
++ I Module FvwmEvent EventNewDesk
+
++ I Exec exec sh ~/.fehbg
++ I Exec exec picom
++ I Exec exec xfce4-panel
++ I Exec nemo-desktop
+
+# Mouse Bindings Functions
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc MoveToCurrent
+AddToFunc MoveToCurrent
++ I ThisWindow MoveToPage
++ I ThisWindow MoveToDesk
+
+# Function: ViewManPage $0
+#
+# This function loads the man page $0 in an terminal
+# and is used with the help menu.
+DestroyFunc ViewManPage
+AddToFunc   ViewManPage
++ I Exec exec $[infostore.terminal] -g 80x40 \
+  -n "Manual Page - $0" -T "Manual Page - $0" -e man "$0"
+
+# Function: IconManClick
+#
+# This function is run from FvwmIconMan when the button is clicked.
+DestroyFunc IconManClick
+AddToFunc   IconManClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Iconify
++ I TestRc (Match) Break
++ I ThisWindow WindowShade off
++ I ThisWindow Iconify off
++ I ThisWindow Raise
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+# Function: ToggleTitle
+#
+# This function will toggle if fvwm shows the TitleBar.
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (State 1) WindowStyle Title
++ I TestRc (Match) State 1 False
++ I TestRc (Match) Break
++ I WindowStyle !Title
++ I State 1 True
+
+# Function: ChangeDesk
+#
+# This function is called by FvwmEvent every time the Desk is changed.
+DestroyFunc ChangeDesk
+AddToFunc   ChangeDesk
++ I SendToModule FvwmButtons ChangeButton desk0 Colorset 12
++ I SendToModule FvwmButtons ChangeButton desk1 Colorset 12
++ I SendToModule FvwmButtons ChangeButton desk2 Colorset 12
++ I SendToModule FvwmButtons ChangeButton desk3 Colorset 12
++ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11
+
+
+#############
+# 2: Styles #
+#############
+
+# Desktops and Pages
+#
+# Fvwm has both Virtual Desktops and Pages. Each Desktop is built from
+# a grid of Pages. The following sets the name of four Desktops and then
+# divides each Desktop into a 2x2 grid of Pages that are positioned as
+#
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#
+DesktopName 0 Main
+DesktopName 1 Desk1
+DesktopName 2 Desk2
+DesktopName 3 Desk3
+DesktopSize 2x2
+
+# EdgeScroll will move the view port between the Pages when the mouse
+# moves to the edge of the screen. This set the amount of distance to
+# scroll at 100% (full page) and the EdgeResistance which is a timer
+# for how long the mouse as at the edge before it scrolls.
+#
+# Set EdgeScroll 0 0 and/or EdgeResistance -1 to disable.
+EdgeScroll 0 0
+EdgeResistance 450
+EdgeThickness 1
+Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+
+#=================================
+# Distancia das bordas das janelas
+#=================================
+				        [left] [right] [top] [bottom]
+EwmhBaseStruts     0     120     31      0
+#=============================================
+
+# This sets the ClickTime and MoveThreshold used to determine
+# Double Clicks, Hold and Move for the mouse.
+ClickTime 250
+MoveThreshold 3
+
+# Sets the focus style to SloppyFocus and a mouse click
+# in a window will Raise it.
+Style * SloppyFocus, MouseFocusClickRaises
+
+# Default Font
+DefaultFont "xft:Ubuntu:Bold:size=10:antialias=True"
+
+# Window Placement
+Style * !MinOverlapPlacement, !GrabFocusOff, !UsePPosition
+
+# Sets all windows to OpaqueMove (vs a wired frame) and  windows will
+# snap to each other and the edge of the screen.
+OpaqueMoveSize unlimited
+Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+
+# Transient Windows (such as open file windows)
+Style * DecorateTransient, StackTransientParent
+Style * !FPGrabFocusTransient, FPReleaseFocusTransient
+
+# WindowShade
+Style * WindowShadeScrolls, WindowShadeSteps 10
+
+# Ignore Numlock and other modifiers for bindings
+# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
+IgnoreModifiers L25
+
+# Disable Icons from appearing on desktop.
+# Comment this out or use Style * Icon to get the icons back.
+Style * !Icon
+
+# Window Specific Styles
+Style RightPanel !Title, !Borders, !Handles, Sticky, \
+                 WindowListSkip, NeverFocus
+Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmIdent WindowListSkip
+
+Style xfce4-panel !Title, PositionPlacement Center, !Borders, !Handles, !Sticky, \
+                 !WindowListSkip, NeverFocus, !Layer 6
+Style xfce4-popup-whiskermenu Title, !PositionPlacement Right, Borders, Handles, Sticky, \
+                 WindowListSkip, NeverFocus, Layer 6
+
+#######
+# 3: Colorsets
+#
+# Colorsets can be used to configure the color of the various
+# parts of fvwm such as window decor, menus, modules, etc.
+#
+# Colorset Convention
+#
+#   0 - Default
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#   5 - Menu - Inactive Item
+#   6 - Menu - Active Item
+#   7 - Menu - Grayed Item
+#   8 - Menu - Title
+#   9 - Reserved
+#  10+ Modules
+#      10 - Module Default
+#      11 - Module Hilight
+#      12 - Module ActiveButton (Mouse Hover)
+#      13 - FvwmPager Active Page
+#      14 - FvwmIconMan Iconified Button
+###########
+
+#====================================
+# Cores Normais
+#===================================
+
+Colorset 0  fg #ffffff, bg #232323, hi #393939, sh, Plain, NoShape
+Colorset 1  fg #202020, bg #FF9292, hi, sh, Plain, NoShape
+Colorset 2  fg #ffffff, bg #101010, hi, sh, Plain, NoShape
+Colorset 3  fg #ffffff, bg #7C37AD, hi, sh, Plain, NoShape
+
+#====================================
+# Cores Transparentes
+#===================================
+
+Colorset 11 RootTransparent buffer, fg white, bg average, \
+Tint #080808 70, bgTint black 15  # tint is optional
+Colorset 12 RootTransparent buffer, fg white, bg average, \
+Tint #080808  90, bgTint red  15  # tint is optional
+
+AddTitleStyle Colorset NN PP
+   
+#=========================================
+# Estilo e docoraçao das janelas
+#=========================================
+# Decor Styles
+Style * TitleAtLeft
+Style * Colorset 2, HilightColorset 0  # to use fg and bg
+Style * BorderWidth 0, HandleWidth 1, MWMButtons , FvwmBorder , FirmBorder  
+   BorderStyle Inactive Colorset 12 -- flat
+   BorderStyle Active   Colorset 2 -- flat
+   TitleStyle AllInactive Colorset 2 -- flat
+   TitleStyle AllActive   Colorset 0 -- flat
+   ButtonStyle All -- UseTitleStyle flat
+#==========================================
+
+# Window Operations Menus
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Move"      Move
++ "Resize"    Resize
++ "Iconify"   Iconify
++ "Maximize"  Maximize
++ "Shade"     WindowShade
++ "Stick"     Stick
++ "" Nop
++ "Close"     Close
++ "More..."   Menu MenuWindowOpsLong This 0 0
+
+#######
+# 5: Mouse and Key bindings
+#
+# Contexts:
+#     R = Root Window                 rrrrrrrrrrrrrrrrrrrrrr
+#     W = Application Window          rIrrrr<---------^rrrrr
+#     F = Frame Corners               rrrrrr[13TTTT642]rrrrr
+#     S = Frame Sides                 rIrrrr[wwwwwwwww]rrrrr
+#     T = Title Bar                   rrrrrr[wwwwwwwww]rrrrr
+#     I = Icon                        rIrrrrv_________>rrrrr
+#                                     rrrrrrrrrrrrrrrrrrrrrr
+#
+#     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#
+# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing
+#
+# Format: Key <X>  <Context> <Modifier> <Action>
+#         Mouse <X> <Context> <Modifier> <Action>
+####################
+
+# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.
+# Ctrl-F1/F2/F3/F4 will switch between the Virtual Desktops.
+# Super_R (windows key) will launch a terminal.
+#
+# Silent supresses any errors (such as keyboards with no Menu key).
+Silent Key F1 A M Menu MenuFvwmRoot
+Silent Key Menu A A Menu MenuFvwmRoot
+Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+
+Silent Key 1 A 4 GotoDesk 0 0
+Silent Key 2 A 4 GotoDesk 0 1
+Silent Key 3 A 4 GotoDesk 0 2
+Silent Key 4 A 4 GotoDesk 0 3
+Silent Key 5 A 4 GotoDesk 0 4
+Silent Key Super_R A A Exec exec $[infostore.terminal]
+
+# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#   1 - Open the WindowOps menu.
+#   2 - Close on single click, Destory on double click.
+#   4 - Maximize (right/middle button will only maximize vertical/horizontal)
+#   6 - Iconify (minimize)
+Mouse 1 1 A Menu MenuWindowOps Delete
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize 100 100
+Mouse 2 4 A Maximize 0 100
+Mouse 3 4 A Maximize 100 0
+Mouse 1 6 A Iconify
+
+#   TitleBar: Click to Raise, Move, Double Click to Maximize
+#             Mouse Wheel Up/Down to WindowShade On/Off
+#   Borders: Click to raise, Move to Resize
+#   Root Window: Left Click - Main Menu
+#                Right Click - WindowOps Menu
+#                Middle Click - Window List Menu
+#   Right click TitleBar/Borders for WindowOps Menu
+Mouse 1	T    A RaiseMoveX Move Maximize
+Mouse 1	FS   A RaiseMove Resize
+Mouse 4	T    A WindowShade True
+Mouse 5	T    A WindowShade False
+Mouse 1	R    A Menu MenuFvwmRoot
+Mouse 2	R    A WindowList
+Mouse 3	R    A Menu MenuWindowOpsLong
+Mouse 1	I    A RaiseMoveX Move "Iconify off"
+Mouse 3	T    A Menu MenuWindowOps
+Mouse 3 I    A Menu MenuIconOps
+
+#==========================
+# Atalhos do teclado
+#==========================
+
+# Abrir aplicativos
+Key Return A 4 Exec xfce4-terminal
+Key c A 4S Exec chromium
+Key f A 4S Exec chromium faceboock.com
+Key y A 4S Exec chromium youtube.com
+Key n A 4S Exec nemo
+Key s A 4S Exec subl
+
+# Print da tela
+
+Key Print A 4 Exec scrot 'My_i3-gaps_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+
+# Volume 
+Key XF86AudioRaiseVolume A A Exec amixer -q set Master 5%+
+Key XF86AudioLowerVolume A A Exec amixer -q set Master 5%-
+Key XF86AudioMute A A Exec amixer set Master toggle
+
+# Açoes nas janelas e no sistema
+
+Key e A 4S Quit
+Key r A 4S Restart
+Key q WT 4 Close
+Key m WT 4 Maximize
+
+#######
+# 6: Window Decor
+#
+# Buttons Locations: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#
+#   1 - WindowOps Menu
+#   2 - Close
+#   4 - Maximize
+#   6 - Minimize
+###########
+
+# Buttons Locations 1 3 5 7 9 T T T T T 0 8 6 4 2
+# 2 >> Close, 4 >> Maximize, 6 >> Minimize, 1 >> Window Menu
+
+TitleStyle Centered Height 28 -- Flat
+
+ButtonStyle Reset
+
+ButtonStyle All -- Flat
+
+ButtonStyle All -- UseTitleStyle
+
+AddButtonStyle All Vector 2 1x1@4 1x1@4
+
+AddButtonStyle 2 \
+  ActiveUp (Pixmap $[icons]/Close1.png -- Flat) \
+  ActiveDown (Pixmap $[icons]/Close2.png -- Flat) \
+  Inactive (Pixmap $[icons]/Close2.png -- Flat)
+
+AddButtonStyle 4 \
+  ActiveUp (Pixmap $[icons]/Minimize1.png -- Flat) \
+  ActiveDown (Pixmap $[icons]/Minimize2.png -- Flat) \
+  Inactive (Pixmap $[icons]/Minimize2.png -- Flat)
+
+AddButtonStyle 6 \
+  ActiveUp (Pixmap $[icons]/Minimize-close1.png -- Flat) \
+  ActiveDown (Pixmap $[icons]/Minimize-close2.png -- Flat) \
+  Inactive (Pixmap $[icons]/Minimize-close2.png -- Flat)
+
+AddButtonStyle 1 \
+  ActiveUp (Pixmap $[icons]/Plus1.png -- Flat) \
+  ActiveDown (Pixmap $[icons]/Plus2.png -- Flat) \
+  Inactive (Pixmap $[icons]/Plus2.png -- Flat)
+
+
+#====================================================================
+#TitleStyle Centered Height 30 -- Flat
+#ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 \
+#                15x15@3 -- Flat
+#ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 \
+#                85x15@3 15x15@3 -- Flat
+#ButtonStyle All ActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 \
+#                20x20@3 -- Flat
+#ButtonStyle All ToggledActiveDown Vector 5 20x20@4 20x80@3 80x80@3 \
+#                80x20@3 20x20@3 -- Flat
+#ButtonStyle All ToggledInactive Vector 5 47x47@3 57x53@3 53x53@3 \
+#                53x47@3 47x47@3 -- Flat
+#ButtonStyle All Inactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 \
+#                47x47@3 -- Flat
+#AddButtonStyle 1 Active Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 45x45@3
+#AddButtonStyle 2 Active Vector 4 35x35@3 65x65@3 65x35@4 35x65@3
+#AddButtonStyle 4 Active Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 30x70@3 \
+#                 30x50@4 50x50@3 50x70@3
+#AddButtonStyle 4 ToggledActiveUp Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \
+#                 30x70@3 50x30@4 50x50@3 70x50@3
+#AddButtonStyle 6 Active Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 35x60@3
+#ButtonStyle All - Clear
+#ButtonStyle 1 - MwmDecorMenu
+#ButtonStyle 4 - MwmDecorMax
+#ButtonStyle 6 - MwmDecorMin
+#=======================================================================
+############
+# 7: Modules
+#############
+
+# FvwmIdent
+#
+# FvwmIdent is a module that can be used to get the various info about
+# a window. One use is getting the class/resource/name of a window.
+DestroyModuleConfig FvwmIdent:*
+*FvwmIdent: Colorset 10
+*FvwmIdent: Font "xft:Sans:size=10:antialias=True"
+
+# FvwmBanner
+#
+# This displays the Fvwm Logo for 5 seconds. This is displayed
+# when fvwm starts.
+DestroyModuleConfig FvwmBanner:*
+*FvwmBanner: NoDecor
+*FvwmBanner: Timeout 5
+
+# FvwmScript
+#
+# FvwmScript is a module that allows one to write custom desktop
+# widgets and various other tools. This config uses two FvwmScripts.
+#   - DateTime - uses the output of "date" to display the date/time
+#     on the RightPanel.
+#   - Quit - This is a popup that asks for quit confirmation before
+#     quitting fvwm.
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 11
+*FvwmScript: Geometry 120x$[vp.height]-0+30
+# FvwmButtons - RightPanel
+#
+# FvwmButtons is a powerful module that can be used to build custom
+# panels and docks. This config uses FvwmButtons to build the RightPanel.
+# The panel contains buttons to switch desks, FvwmPager, a system tray,
+# FvwmIconMan (list of running windows), and a clock.
+#
+# Note - To use the system tray you must have "stalonetray" installed.
+DestroyModuleConfig RightPanel:*
+*RightPanel: Geometry 120x$[vp.height]-0+30
+*RightPanel: Colorset 11
+*RightPanel: Rows $[vp.height]
+*RightPanel: Columns 120
+*RightPanel: Frame 0
+*RightPanel: Font "xft:Ubuntu:Bold:size=12:antialias=True"
+#*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
+*RightPanel: (120x5, Frame 0)
+*RightPanel: (10x20, Frame 0)
+
+*RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 0, ActiveColorset 3, Frame 2)
+*RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 3, Frame 2)
+*RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 3, Frame 2)
+*RightPanel: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 3, Frame 2)
+
+*RightPanel: (10x20, Frame 0)
+*RightPanel: (5x80, Frame 0)
+*RightPanel: (110x100, Swallow FvwmPager 'Module FvwmPager *', Frame 1)
+*RightPanel: (5x80, Frame 0)
+*RightPanel: (120x5, Frame 0)
+
+*RightPanel: (70x0, !Swallow FvwmIconMan 'Module FvwmIconMan *', Frame 1)
+
+Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \
+    stalonetray 'Exec exec stalonetray --config \
+    "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 0)
+Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-225)), \
+    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
+    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+
+*RightPanel: (120x25, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',\
+    Frame 0)
+*RightPanel: (120x5, Frame 0)
+
+*RightPanel: (120x55, Swallow Pacman 'Module FvwmScript FvwmScript-pacman',\
+    Frame 0)
+
+#*RightPanel: (120x75, Swallow System 'Module FvwmScript FvwmScript-System',\
+#    Frame 0)
+
+
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+DestroyModuleConfig FvwmPager:*
+*FvwmPager: Colorset * 11
+*FvwmPager: HilightColorset * 1
+*FvwmPager: BalloonColorset * 11
+*FvwmPager: WindowColorsets 2 2
+*FvwmPager: Font None
+*FvwmPager: Balloons All
+*FvwmPager: BalloonFont "xft:Sans:Ubuntu:size=12:antialias=True"
+*FvwmPager: BallonYOffset +2
+*FvwmPager: Window3dBorders
+*FvwmPager: MiniIcons
+
+# FvwmIconMan
+#
+# FvwmIconMan is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+DestroyModuleConfig FvwmIconMan:*
+*FvwmIconMan: UseWinList true
+*FvwmIconMan: ButtonGeometry 120x50
+*FvwmIconMan: ManagerGeometry -30x-80
+*FvwmIconMan: Background  11
+*FvwmIconMan: Foreground #ffffff
+*FvwmIconMan: FocusColorset 1
+*FvwmIconMan: IconColorset 1
+*FvwmIconMan: FocusAndSelectColorset 2
+*FvwmIconMan: SelectColorset 2
+*FvwmIconMan: IconAndSelectColorset 2
+*FvwmIconMan: DrawIcons always
+*FvwmIconMan: ReliefThickness 2
+*FvwmIconMan: Format "%t"
+*FvwmIconMan: Font "xft:Ubuntu:Bold:size=10:antialias=True"
+*FvwmIconMan: Action Mouse 0 A ret
+*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
+*FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
+*FvwmIconMan: Resolution global
+*FvwmIconMan: Tips needed
+*FvwmIconMan: Sort id
+
+# FvwmEvent
+#
+# FvwmEvent is a module that can run an action or function
+# on specific events. This instance changes which desk number
+# is highlighted when the desk is changed.
+DestroyModuleConfig EventNewDesk:*
+*EventNewDesk: PassID
+*EventNewDesk: new_desk ChangeDesk
+
+# FvwmForm
+#
+# FvwmForm is a module that can be used to build a GUI
+# form. Used with fvwm-menu-desktop-config.fpl.
+# This sets the default colorsets.
+*FvwmFormDefault: Colorset 0
+*FvwmFormDefault: ItemColorset 
+

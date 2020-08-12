@@ -1,0 +1,62 @@
+[colors]
+background = #1e2536
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+
+[bar/mybar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 98%
+height = 20
+offset-x = 1%
+offset-y = 0.1%
+radius = 5
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Ubuntu:style=Bold:size=14;2
+font-1 = Ubuntu:style=Bold:size=11;2
+font-2 = Ubuntu:style=Bold:size=11;2
+font-3 = Iosevka:style=Bold:size=12;2
+;font-4 = Noto Color Emoji:pixelsize=10
+
+modules-left = active work
+modules-center = 
+modules-right = unic
+
+tray-position = right
+tray-padding = 1
+tray-background = #09A000
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/work]
+type = custom/script
+exec = herbstclient list_monitors | awk '{print $5}' | sed 's/"//g'
+interval = 0.1
+label-padding = 1
+label-foreground = #c7ff26
+label-underline = #00FFFF
+label-overline = #00FFFF
+
+[module/active]
+type = custom/script
+exec = herbstclient tag_status | sed 's/#.*//g;s/\.//g;s/:/▫/g'
+interval = 0.1
+label-foreground = #FFFFFF
+label-font = 2
+
+[module/unic]
+type = custom/script
+exec = ~/.config/polybar/sys.sh
+interval = 2
+label-foreground = #c7ff26

@@ -1,0 +1,15 @@
+2020/08/11-18:06:17.825 5cc Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/11-18:06:17.825 5cc Recovering log #211
+2020/08/11-18:06:17.825 5cc Reusing old log /home/diego/.config/chromium/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/000211.log 
+2020/08/11-18:06:51.085 7c0 Level-0 table #216: started
+2020/08/11-18:06:51.148 7c0 Level-0 table #216: 669 bytes OK
+2020/08/11-18:06:51.184 7c0 Delete type=0 #211
+2020/08/11-18:06:51.184 7c0 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/11-18:06:51.184 7c0 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x0a\x00s\x00w\x00_\x00v\x00e\x00r\x00s\x00i\x00o\x00n' @ 1367 : 1
+2020/08/11-18:06:51.184 7c0 Compacting 1@1 + 1@2 files
+2020/08/11-18:06:51.240 7c0 Generated table #217@1: 22 keys, 653 bytes
+2020/08/11-18:06:51.240 7c0 Compacted 1@1 + 1@2 files => 653 bytes
+2020/08/11-18:06:51.275 7c0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/11-18:06:51.275 7c0 Delete type=2 #213
+2020/08/11-18:06:51.275 7c0 Delete type=2 #216
+2020/08/11-18:06:51.275 7c0 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x0a\x00s\x00w\x00_\x00v\x00e\x00r\x00s\x00i\x00o\x00n' @ 1367 : 1 .. (end); will stop at (end)

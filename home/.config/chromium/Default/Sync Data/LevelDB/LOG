@@ -1,0 +1,15 @@
+2020/08/11-21:06:13.799 381 Reusing MANIFEST /home/diego/.config/chromium/Default/Sync Data/LevelDB/MANIFEST-000001
+2020/08/11-21:06:13.989 381 Recovering log #236
+2020/08/11-21:06:14.325 381 Reusing old log /home/diego/.config/chromium/Default/Sync Data/LevelDB/000236.log 
+2020/08/11-21:17:16.563 1351 Level-0 table #240: started
+2020/08/11-21:17:16.638 1351 Level-0 table #240: 104923 bytes OK
+2020/08/11-21:17:16.693 1351 Delete type=0 #236
+2020/08/11-21:17:16.693 1351 Compacting 4@0 + 1@1 files
+2020/08/11-21:17:16.747 1351 Generated table #241@0: 107 keys, 20880 bytes
+2020/08/11-21:17:16.747 1351 Compacted 4@0 + 1@1 files => 20880 bytes
+2020/08/11-21:17:16.875 1351 compacted to: files[ 0 1 1 0 0 0 0 ]
+2020/08/11-21:17:16.876 1351 Delete type=2 #228
+2020/08/11-21:17:16.876 1351 Delete type=2 #240
+2020/08/11-21:17:16.876 1351 Delete type=2 #237
+2020/08/11-21:17:16.876 1351 Delete type=2 #234
+2020/08/11-21:17:16.876 1351 Delete type=2 #231

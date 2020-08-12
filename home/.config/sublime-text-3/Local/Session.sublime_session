@@ -1,0 +1,1361 @@
+{
+	"folder_history":
+	[
+		"/home/diego/.config/openbox",
+		"/home/diego/.pekwm",
+		"/home/diego/.fvwm",
+		"/home/diego/Scripts",
+		"/home/diego/.config/polybar/scripts"
+	],
+	"last_version": 3211,
+	"last_window_id": 2,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 810.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"ins",
+						"Install Package Control"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/diego/.config/sublime-text-3/Packages/ColorPicker/ColorPicker.sublime-settings"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1572.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"FvwmI",
+						"FvwmIconMan"
+					],
+					[
+						"IconM",
+						"FvwmIconMan"
+					],
+					[
+						"I",
+						"Icon"
+					],
+					[
+						"Fvw",
+						"FvwmIconMan"
+					],
+					[
+						"C",
+						"ChangeTitle"
+					],
+					[
+						"A",
+						"Atualizar"
+					],
+					[
+						"ca",
+						"cache"
+					],
+					[
+						"ke",
+						"key"
+					],
+					[
+						"S",
+						"Shift"
+					],
+					[
+						"fac",
+						"facecmd"
+					],
+					[
+						"st",
+						"static"
+					],
+					[
+						"pa",
+						"pacman"
+					],
+					[
+						"sys",
+						"system"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/diego/.fvwm/FvwmScript-DateTime",
+					"settings":
+					{
+						"buffer_size": 863,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/diego/.fvwm/FvwmScript-pacman",
+					"settings":
+					{
+						"buffer_size": 685,
+						"encoding": "UTF-8",
+						"line_ending": "Unix",
+						"name": "WindowTitle {FvwmApplet-Battery}"
+					}
+				},
+				{
+					"file": "/home/diego/.fvwm/scripts/pacman.sh",
+					"settings":
+					{
+						"buffer_size": 320,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/diego/.fvwm/scripts/cpumem.sh",
+					"settings":
+					{
+						"buffer_size": 498,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "\n## Set The Thumbnail Cache Folder\nSetEnv cache $[HOME].fvwm/cache/\n\n## Set The Scripts Folder\nSetEnv scripts $[HOME].fvwm/scripts\n\n## Where The Titlebar Icons Are Stored\nSetEnv icons $[HOME]/.fvwm/icons\n\n\n\n\nInfoStoreAdd terminal xfce4-terminal\n\n###########\n# 1: Functions\n#\n# Fvwm can use custom functions for various tasks.\n# The syntax for defining a function named FunctionName is:\n#\n#   DestroyFunc FunctionName\n#   AddToFunc FunctionName\n#   + I [Action to do Immediately]\n#   + C [Action to do on a Mouse Click]\n#   + D [Action to do on a Mouse Double Click]\n#   + H [Action to do on a Mouse Hold]\n#   + M [Action to do on a Mouse Motion]\n###########\n\n# Start Function\n#\n# The start function is run right after fvwm is done reading\n# the config file. This function run after each restart\n# so using Test (Init) or Test (Restart) can further control\n# actions that are run during the first time run (Init) or\n# actions that are run after a restart.\nDestroyFunc StartFunction\nAddToFunc   StartFunction\n#+ I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \\\n#    Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault\n#+ I TestRc (NoMatch) Exec exec fvwm-root \\\n#    $[FVWM_DATADIR]/default-config/images/background/bg1.png\n#+ I Test (Init) Module FvwmBanner\n+ I Module FvwmButtons RightPanel\n+ I Module FvwmEvent EventNewDesk\n\n+ I Exec exec sh ~/.fehbg\n+ I Exec exec picom\n+ I Exec exec xfce4-panel\n+ I Exec nemo-desktop\n\n# Mouse Bindings Functions\nDestroyFunc RaiseMoveX\nAddToFunc RaiseMoveX\n+ I Raise\n+ M $0\n+ D $1\n\nDestroyFunc RaiseMove\nAddToFunc RaiseMove\n+ I Raise\n+ M $0\n\nDestroyFunc MoveToCurrent\nAddToFunc MoveToCurrent\n+ I ThisWindow MoveToPage\n+ I ThisWindow MoveToDesk\n\n# Function: ViewManPage $0\n#\n# This function loads the man page $0 in an terminal\n# and is used with the help menu.\nDestroyFunc ViewManPage\nAddToFunc   ViewManPage\n+ I Exec exec $[infostore.terminal] -g 80x40 \\\n  -n \"Manual Page - $0\" -T \"Manual Page - $0\" -e man \"$0\"\n\n# Function: IconManClick\n#\n# This function is run from FvwmIconMan when the button is clicked.\nDestroyFunc IconManClick\nAddToFunc   IconManClick\n+ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Iconify\n+ I TestRc (Match) Break\n+ I ThisWindow WindowShade off\n+ I ThisWindow Iconify off\n+ I ThisWindow Raise\n+ I ThisWindow (AcceptsFocus) FlipFocus\n\n# Function: ToggleTitle\n#\n# This function will toggle if fvwm shows the TitleBar.\nDestroyFunc ToggleTitle\nAddToFunc   ToggleTitle\n+ I ThisWindow (State 1) WindowStyle Title\n+ I TestRc (Match) State 1 False\n+ I TestRc (Match) Break\n+ I WindowStyle !Title\n+ I State 1 True\n\n# Function: ChangeDesk\n#\n# This function is called by FvwmEvent every time the Desk is changed.\nDestroyFunc ChangeDesk\nAddToFunc   ChangeDesk\n+ I SendToModule FvwmButtons ChangeButton desk0 Colorset 12\n+ I SendToModule FvwmButtons ChangeButton desk1 Colorset 12\n+ I SendToModule FvwmButtons ChangeButton desk2 Colorset 12\n+ I SendToModule FvwmButtons ChangeButton desk3 Colorset 12\n+ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11\n\n\n#############\n# 2: Styles #\n#############\n\n# Desktops and Pages\n#\n# Fvwm has both Virtual Desktops and Pages. Each Desktop is built from\n# a grid of Pages. The following sets the name of four Desktops and then\n# divides each Desktop into a 2x2 grid of Pages that are positioned as\n#\n#   +---+---+\n#   |   |   |\n#   +---+---+\n#   |   |   |\n#   +---+---+\n#\nDesktopName 0 Main\nDesktopName 1 Desk1\nDesktopName 2 Desk2\nDesktopName 3 Desk3\nDesktopSize 2x2\n\n# EdgeScroll will move the view port between the Pages when the mouse\n# moves to the edge of the screen. This set the amount of distance to\n# scroll at 100% (full page) and the EdgeResistance which is a timer\n# for how long the mouse as at the edge before it scrolls.\n#\n# Set EdgeScroll 0 0 and/or EdgeResistance -1 to disable.\nEdgeScroll 0 0\nEdgeResistance 450\nEdgeThickness 1\nStyle * EdgeMoveDelay 350, EdgeMoveResistance 350\n\n#=================================\n# Distancia das bordas das janelas\n#=================================\n\t\t\t\t        [left] [right] [top] [bottom]\nEwmhBaseStruts     0     120     31      0\n#=============================================\n\n# This sets the ClickTime and MoveThreshold used to determine\n# Double Clicks, Hold and Move for the mouse.\nClickTime 250\nMoveThreshold 3\n\n# Sets the focus style to SloppyFocus and a mouse click\n# in a window will Raise it.\nStyle * SloppyFocus, MouseFocusClickRaises\n\n# Default Font\nDefaultFont \"xft:Ubuntu:Bold:size=10:antialias=True\"\n\n# Window Placement\nStyle * !MinOverlapPlacement, !GrabFocusOff, !UsePPosition\n\n# Sets all windows to OpaqueMove (vs a wired frame) and  windows will\n# snap to each other and the edge of the screen.\nOpaqueMoveSize unlimited\nStyle * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid\n\n# Transient Windows (such as open file windows)\nStyle * DecorateTransient, StackTransientParent\nStyle * !FPGrabFocusTransient, FPReleaseFocusTransient\n\n# WindowShade\nStyle * WindowShadeScrolls, WindowShadeSteps 10\n\n# Ignore Numlock and other modifiers for bindings\n# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings\nIgnoreModifiers L25\n\n# Disable Icons from appearing on desktop.\n# Comment this out or use Style * Icon to get the icons back.\nStyle * !Icon\n\n# Window Specific Styles\nStyle RightPanel !Title, !Borders, !Handles, Sticky, \\\n                 WindowListSkip, NeverFocus\nStyle ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6\nStyle FvwmIdent WindowListSkip\n\nStyle xfce4-panel !Title, PositionPlacement Center, !Borders, !Handles, !Sticky, \\\n                 !WindowListSkip, NeverFocus, !Layer 6\nStyle xfce4-popup-whiskermenu Title, !PositionPlacement Right, Borders, Handles, Sticky, \\\n                 WindowListSkip, NeverFocus, Layer 6\n\n#######\n# 3: Colorsets\n#\n# Colorsets can be used to configure the color of the various\n# parts of fvwm such as window decor, menus, modules, etc.\n#\n# Colorset Convention\n#\n#   0 - Default\n#   1 - Inactive Windows\n#   2 - Active Window\n#   3 - Inactive Windows Borders\n#   4 - Active Windows Borders\n#   5 - Menu - Inactive Item\n#   6 - Menu - Active Item\n#   7 - Menu - Grayed Item\n#   8 - Menu - Title\n#   9 - Reserved\n#  10+ Modules\n#      10 - Module Default\n#      11 - Module Hilight\n#      12 - Module ActiveButton (Mouse Hover)\n#      13 - FvwmPager Active Page\n#      14 - FvwmIconMan Iconified Button\n###########\n\n#====================================\n# Cores Normais\n#===================================\n\nColorset 0  fg #ffffff, bg #232323, hi #393939, sh, Plain, NoShape\nColorset 1  fg #202020, bg #FF9292, hi, sh, Plain, NoShape\nColorset 2  fg #ffffff, bg #101010, hi, sh, Plain, NoShape\nColorset 3  fg #ffffff, bg #7C37AD, hi, sh, Plain, NoShape\n\n#====================================\n# Cores Transparentes\n#===================================\n\nColorset 11 RootTransparent buffer, fg white, bg average, \\\nTint #080808 70, bgTint black 15  # tint is optional\nColorset 12 RootTransparent buffer, fg white, bg average, \\\nTint #080808  90, bgTint red  15  # tint is optional\n\nAddTitleStyle Colorset NN PP\n   \n#=========================================\n# Estilo e docoraçao das janelas\n#=========================================\n# Decor Styles\nStyle * TitleAtLeft\nStyle * Colorset 2, HilightColorset 0  # to use fg and bg\nStyle * BorderWidth 0, HandleWidth 1, MWMButtons , FvwmBorder , FirmBorder  \n   BorderStyle Inactive Colorset 12 -- flat\n   BorderStyle Active   Colorset 2 -- flat\n   TitleStyle AllInactive Colorset 2 -- flat\n   TitleStyle AllActive   Colorset 0 -- flat\n   ButtonStyle All -- UseTitleStyle flat\n#==========================================\n\n# Window Operations Menus\nDestroyMenu MenuWindowOps\nAddToMenu   MenuWindowOps\n+ \"Move\"      Move\n+ \"Resize\"    Resize\n+ \"Iconify\"   Iconify\n+ \"Maximize\"  Maximize\n+ \"Shade\"     WindowShade\n+ \"Stick\"     Stick\n+ \"\" Nop\n+ \"Close\"     Close\n+ \"More...\"   Menu MenuWindowOpsLong This 0 0\n\n#######\n# 5: Mouse and Key bindings\n#\n# Contexts:\n#     R = Root Window                 rrrrrrrrrrrrrrrrrrrrrr\n#     W = Application Window          rIrrrr<---------^rrrrr\n#     F = Frame Corners               rrrrrr[13TTTT642]rrrrr\n#     S = Frame Sides                 rIrrrr[wwwwwwwww]rrrrr\n#     T = Title Bar                   rrrrrr[wwwwwwwww]rrrrr\n#     I = Icon                        rIrrrrv_________>rrrrr\n#                                     rrrrrrrrrrrrrrrrrrrrrr\n#\n#     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]\n#\n# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing\n#\n# Format: Key <X>  <Context> <Modifier> <Action>\n#         Mouse <X> <Context> <Modifier> <Action>\n####################\n\n# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.\n# Ctrl-F1/F2/F3/F4 will switch between the Virtual Desktops.\n# Super_R (windows key) will launch a terminal.\n#\n# Silent supresses any errors (such as keyboards with no Menu key).\nSilent Key F1 A M Menu MenuFvwmRoot\nSilent Key Menu A A Menu MenuFvwmRoot\nSilent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L\n\nSilent Key 1 A 4 GotoDesk 0 0\nSilent Key 2 A 4 GotoDesk 0 1\nSilent Key 3 A 4 GotoDesk 0 2\nSilent Key 4 A 4 GotoDesk 0 3\nSilent Key 5 A 4 GotoDesk 0 4\nSilent Key Super_R A A Exec exec $[infostore.terminal]\n\n# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]\n#   1 - Open the WindowOps menu.\n#   2 - Close on single click, Destory on double click.\n#   4 - Maximize (right/middle button will only maximize vertical/horizontal)\n#   6 - Iconify (minimize)\nMouse 1 1 A Menu MenuWindowOps Delete\nMouse 1 2 A Close\nMouse 1 4 A Maximize 100 100\nMouse 2 4 A Maximize 0 100\nMouse 3 4 A Maximize 100 0\nMouse 1 6 A Iconify\n\n#   TitleBar: Click to Raise, Move, Double Click to Maximize\n#             Mouse Wheel Up/Down to WindowShade On/Off\n#   Borders: Click to raise, Move to Resize\n#   Root Window: Left Click - Main Menu\n#                Right Click - WindowOps Menu\n#                Middle Click - Window List Menu\n#   Right click TitleBar/Borders for WindowOps Menu\nMouse 1\tT    A RaiseMoveX Move Maximize\nMouse 1\tFS   A RaiseMove Resize\nMouse 4\tT    A WindowShade True\nMouse 5\tT    A WindowShade False\nMouse 1\tR    A Menu MenuFvwmRoot\nMouse 2\tR    A WindowList\nMouse 3\tR    A Menu MenuWindowOpsLong\nMouse 1\tI    A RaiseMoveX Move \"Iconify off\"\nMouse 3\tT    A Menu MenuWindowOps\nMouse 3 I    A Menu MenuIconOps\n\n#==========================\n# Atalhos do teclado\n#==========================\n\n# Abrir aplicativos\nKey Return A 4 Exec xfce4-terminal\nKey c A 4S Exec chromium\nKey f A 4S Exec chromium faceboock.com\nKey y A 4S Exec chromium youtube.com\nKey n A 4S Exec nemo\nKey s A 4S Exec subl\n\n# Print da tela\n\nKey Print A 4 Exec scrot 'My_i3-gaps_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'\n\n# Volume \nKey XF86AudioRaiseVolume A A Exec amixer -q set Master 5%+\nKey XF86AudioLowerVolume A A Exec amixer -q set Master 5%-\nKey XF86AudioMute A A Exec amixer set Master toggle\n\n# Açoes nas janelas e no sistema\n\nKey e A 4S Quit\nKey r A 4S Restart\nKey q WT 4 Close\nKey m WT 4 Maximize\n\n#######\n# 6: Window Decor\n#\n# Buttons Locations: [1 3 5 7 9  TTTTT  0 8 6 4 2]\n#\n#   1 - WindowOps Menu\n#   2 - Close\n#   4 - Maximize\n#   6 - Minimize\n###########\n\n# Buttons Locations 1 3 5 7 9 T T T T T 0 8 6 4 2\n# 2 >> Close, 4 >> Maximize, 6 >> Minimize, 1 >> Window Menu\n\nTitleStyle Centered Height 28 -- Flat\n\nButtonStyle Reset\n\nButtonStyle All -- Flat\n\nButtonStyle All -- UseTitleStyle\n\nAddButtonStyle All Vector 2 1x1@4 1x1@4\n\nAddButtonStyle 2 \\\n  ActiveUp (Pixmap $[icons]/Close1.png -- Flat) \\\n  ActiveDown (Pixmap $[icons]/Close2.png -- Flat) \\\n  Inactive (Pixmap $[icons]/Close2.png -- Flat)\n\nAddButtonStyle 4 \\\n  ActiveUp (Pixmap $[icons]/Minimize1.png -- Flat) \\\n  ActiveDown (Pixmap $[icons]/Minimize2.png -- Flat) \\\n  Inactive (Pixmap $[icons]/Minimize2.png -- Flat)\n\nAddButtonStyle 6 \\\n  ActiveUp (Pixmap $[icons]/Minimize-close1.png -- Flat) \\\n  ActiveDown (Pixmap $[icons]/Minimize-close2.png -- Flat) \\\n  Inactive (Pixmap $[icons]/Minimize-close2.png -- Flat)\n\nAddButtonStyle 1 \\\n  ActiveUp (Pixmap $[icons]/Plus1.png -- Flat) \\\n  ActiveDown (Pixmap $[icons]/Plus2.png -- Flat) \\\n  Inactive (Pixmap $[icons]/Plus2.png -- Flat)\n\n\n#====================================================================\n#TitleStyle Centered Height 30 -- Flat\n#ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 \\\n#                15x15@3 -- Flat\n#ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 \\\n#                85x15@3 15x15@3 -- Flat\n#ButtonStyle All ActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 \\\n#                20x20@3 -- Flat\n#ButtonStyle All ToggledActiveDown Vector 5 20x20@4 20x80@3 80x80@3 \\\n#                80x20@3 20x20@3 -- Flat\n#ButtonStyle All ToggledInactive Vector 5 47x47@3 57x53@3 53x53@3 \\\n#                53x47@3 47x47@3 -- Flat\n#ButtonStyle All Inactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 \\\n#                47x47@3 -- Flat\n#AddButtonStyle 1 Active Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 45x45@3\n#AddButtonStyle 2 Active Vector 4 35x35@3 65x65@3 65x35@4 35x65@3\n#AddButtonStyle 4 Active Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 30x70@3 \\\n#                 30x50@4 50x50@3 50x70@3\n#AddButtonStyle 4 ToggledActiveUp Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \\\n#                 30x70@3 50x30@4 50x50@3 70x50@3\n#AddButtonStyle 6 Active Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 35x60@3\n#ButtonStyle All - Clear\n#ButtonStyle 1 - MwmDecorMenu\n#ButtonStyle 4 - MwmDecorMax\n#ButtonStyle 6 - MwmDecorMin\n#=======================================================================\n############\n# 7: Modules\n#############\n\n# FvwmIdent\n#\n# FvwmIdent is a module that can be used to get the various info about\n# a window. One use is getting the class/resource/name of a window.\nDestroyModuleConfig FvwmIdent:*\n*FvwmIdent: Colorset 10\n*FvwmIdent: Font \"xft:Sans:size=10:antialias=True\"\n\n# FvwmBanner\n#\n# This displays the Fvwm Logo for 5 seconds. This is displayed\n# when fvwm starts.\nDestroyModuleConfig FvwmBanner:*\n*FvwmBanner: NoDecor\n*FvwmBanner: Timeout 5\n\n# FvwmScript\n#\n# FvwmScript is a module that allows one to write custom desktop\n# widgets and various other tools. This config uses two FvwmScripts.\n#   - DateTime - uses the output of \"date\" to display the date/time\n#     on the RightPanel.\n#   - Quit - This is a popup that asks for quit confirmation before\n#     quitting fvwm.\nDestroyModuleConfig FvwmScript:*\n*FvwmScript: DefaultColorset 11\n\n# FvwmButtons - RightPanel\n#\n# FvwmButtons is a powerful module that can be used to build custom\n# panels and docks. This config uses FvwmButtons to build the RightPanel.\n# The panel contains buttons to switch desks, FvwmPager, a system tray,\n# FvwmIconMan (list of running windows), and a clock.\n#\n# Note - To use the system tray you must have \"stalonetray\" installed.\nDestroyModuleConfig RightPanel:*\n*RightPanel: Geometry 120x$[vp.height]-0+30\n*RightPanel: Colorset 11\n*RightPanel: Rows $[vp.height]\n*RightPanel: Columns 120\n*RightPanel: Frame 0\n*RightPanel: Font \"xft:Ubuntu:Bold:size=12:antialias=True\"\n#*RightPanel: (120x45, Icon \"fvwm-logo-small.png\", Frame 0)\n*RightPanel: (120x5, Frame 0)\n*RightPanel: (10x20, Frame 0)\n\n*RightPanel: (25x20, Id desk0, Title \"0\", Action (Mouse 1) GotoDesk 0 0, Colorset 0, ActiveColorset 3, Frame 2)\n*RightPanel: (25x20, Id desk1, Title \"1\", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 3, Frame 2)\n*RightPanel: (25x20, Id desk2, Title \"2\", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 3, Frame 2)\n*RightPanel: (25x20, Id desk3, Title \"3\", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 3, Frame 2)\n\n*RightPanel: (10x20, Frame 0)\n*RightPanel: (5x80, Frame 0)\n*RightPanel: (110x100, Swallow FvwmPager 'Module FvwmPager *', Frame 1)\n*RightPanel: (5x80, Frame 0)\n*RightPanel: (120x5, Frame 0)\n\n*RightPanel: (70x0, !Swallow FvwmIconMan 'Module FvwmIconMan *', Frame 1)\n\nTest (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \\\n    stalonetray 'Exec exec stalonetray --config \\\n    \"$[FVWM_DATADIR]/default-config/.stalonetrayrc\"', Frame 0)\nTest (x stalonetray) PipeRead 'echo \"*RightPanel: (120x$(($[vp.height]-225)), \\\n    Top, Swallow FvwmIconMan \\'Module FvwmIconMan\\', Frame 0)\"'\nTest (!x stalonetray) PipeRead 'echo \"*RightPanel: (120x$(($[vp.height]-205)),\\\n    Top, Swallow FvwmIconMan \\'Module FvwmIconMan\\', Frame 0)\"'\n\n*RightPanel: (120x25, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',\\\n    Frame 0)\n*RightPanel: (120x5, Frame 0)\n\n*RightPanel: (120x55, Swallow Pacman 'Module FvwmScript FvwmScript-pacman',\\\n    Frame 0)\n\n#*RightPanel: (120x75, Swallow System 'Module FvwmScript FvwmScript-System',\\\n#    Frame 0)\n\n\n# FvwmPager\n#\n# This module displays the location of the windows on the various Pages\n# and Desks. This is setup to show only the Pages on the current Desk.\nDestroyModuleConfig FvwmPager:*\n*FvwmPager: Colorset * 11\n*FvwmPager: HilightColorset * 1\n*FvwmPager: BalloonColorset * 11\n*FvwmPager: WindowColorsets 2 2\n*FvwmPager: Font None\n*FvwmPager: Balloons All\n*FvwmPager: BalloonFont \"xft:Sans:Ubuntu:size=12:antialias=True\"\n*FvwmPager: BallonYOffset +2\n*FvwmPager: Window3dBorders\n*FvwmPager: MiniIcons\n\n# FvwmIconMan\n#\n# FvwmIconMan is a powerful tool to list and manage windows. This\n# is used as the window list in the panel or taskbar.\nDestroyModuleConfig FvwmIconMan:*\n*FvwmIconMan: UseWinList true\n*FvwmIconMan: ButtonGeometry 120x50\n*FvwmIconMan: ManagerGeometry -30x-80\n*FvwmIconMan: Background  11\n*FvwmIconMan: Foreground #ffffff\n*FvwmIconMan: FocusColorset 1\n*FvwmIconMan: IconColorset 1\n*FvwmIconMan: FocusAndSelectColorset 2\n*FvwmIconMan: SelectColorset 2\n*FvwmIconMan: IconAndSelectColorset 2\n*FvwmIconMan: DrawIcons always\n*FvwmIconMan: ReliefThickness 2\n*FvwmIconMan: Format \"%t\"\n*FvwmIconMan: Font \"xft:Ubuntu:Bold:size=10:antialias=True\"\n*FvwmIconMan: Action Mouse 0 A ret\n*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick\n*FvwmIconMan: Action Mouse 3 A sendcommand \"Menu MenuIconOps\"\n*FvwmIconMan: Resolution global\n*FvwmIconMan: Tips needed\n*FvwmIconMan: Sort id\n\n# FvwmEvent\n#\n# FvwmEvent is a module that can run an action or function\n# on specific events. This instance changes which desk number\n# is highlighted when the desk is changed.\nDestroyModuleConfig EventNewDesk:*\n*EventNewDesk: PassID\n*EventNewDesk: new_desk ChangeDesk\n\n# FvwmForm\n#\n# FvwmForm is a module that can be used to build a GUI\n# form. Used with fvwm-menu-desktop-config.fpl.\n# This sets the default colorsets.\n*FvwmFormDefault: Colorset 0\n*FvwmFormDefault: ItemColorset \n\n",
+					"file": "/home/diego/.fvwm/config",
+					"file_size": 18569,
+					"file_write_time": 132416567216239634,
+					"settings":
+					{
+						"buffer_size": 18524,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/diego/.fvwm/FvwmScripts-System",
+					"settings":
+					{
+						"buffer_size": 685,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/diego/Scripts/cpumem.sh",
+					"settings":
+					{
+						"buffer_size": 498,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/diego/.config/i3/config",
+					"settings":
+					{
+						"buffer_size": 7175,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"ins",
+						"Install Package Control"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/diego/.fvwm/FvwmScript-ConfirmQuit",
+				"/home/diego/Scripts/pacman.sh",
+				"/home/diego/.fvwm/config",
+				"/home/diego/Projetos/arckfetch.sh",
+				"/home/diego/Projetos/pipes.sh",
+				"/home/diego/.config/fontsAwesome.txt",
+				"/home/diego/.config/i3/config",
+				"/home/diego/.config/openbox/rc.xml",
+				"/home/diego/.pekwm/vars",
+				"/home/diego/.pekwm/themes/default/theme",
+				"/home/diego/.pekwm/start",
+				"/home/diego/.pekwm/keys",
+				"/home/diego/.pekwm/config",
+				"/home/diego/dwm/config.h",
+				"/home/diego/.config/polybar/config",
+				"/home/diego/dwm/scripts/bar.sh",
+				"/home/diego/.xprofile",
+				"/home/diego/Projetos/memu .sh",
+				"/usr/share/fvwm/default-config/config",
+				"/home/diego/Git-Clones/FVWM-Style/fvwm/config",
+				"/home/diego/.gtkrc-2.0",
+				"/home/diego/Scripts/cpumem.sh",
+				"/home/diego/.config/tint2/tint2rc",
+				"/bin/pacman-db-upgrade",
+				"/bin/powerline-config",
+				"/bin/bzgrep",
+				"/home/diego/Scripts/disks.sh",
+				"/bin/alsabat",
+				"/home/diego/Scripts/resize.sh",
+				"/home/diego/.config/dconf/user",
+				"/home/diego/.wget-hsts",
+				"/home/diego/.config/xfce4/panel/genmon-2.rc",
+				"/home/diego/.config/xfce4/panel/whiskermenu-1.rc",
+				"/home/diego/Projetos/Usys.sh",
+				"/home/diego/Projetos/easy.sh",
+				"/home/diego/.cache/xfce4/notifyd/log",
+				"/home/diego/test.py",
+				"/home/diego/.config/polybar/scripts/animations.sh",
+				"/home/diego/.config/rofi/Theme_a.rasi",
+				"/home/diego/.config/rofi/Theme_b.rasi",
+				"/home/diego/.config/polybar/scripts/pacman.sh",
+				"/home/diego/.config/polybar/scripts/disks.sh",
+				"/home/diego/Git-Projects/ddboot/ddboot_pt-br/ddboot",
+				"/home/diego/.config/polybar/scripts/util.sh",
+				"/home/diego/.config/sublime-text-3/Packages/ColorPicker/ColorPicker.sublime-settings"
+			],
+			"find":
+			{
+				"height": 24.0
+			},
+			"find_in_files":
+			{
+				"height": 92.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"sh",
+					"Withdraw",
+					"10",
+					"8",
+					"4",
+					"7",
+					"6",
+					"5",
+					"#======",
+					"menu",
+					"style",
+					"Decoration",
+					"trash",
+					"check",
+					"rec",
+					"reci",
+					"recicle",
+					"box",
+					"pack",
+					"clock",
+					"time",
+					"check",
+					"fedora",
+					"quit",
+					"Mod4 Shift s\"",
+					"Mod4 Shift n\"",
+					"Mod4 Shift y\"",
+					"Mod4 Shift f\"",
+					"trash",
+					"reci",
+					"stop",
+					"X",
+					"x",
+					"check",
+					"icons"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 1,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/diego/.fvwm/FvwmScript-DateTime",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 863,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										526,
+										526
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Haskell/Haskell.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 78.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/diego/.fvwm/FvwmScript-pacman",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 685,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										569,
+										569
+									]
+								],
+								"settings":
+								{
+									"auto_name": "WindowTitle {FvwmApplet-Battery}",
+									"syntax": "Packages/Haskell/Haskell.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/diego/.fvwm/scripts/pacman.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 320,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										250,
+										250
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Bash.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/diego/.fvwm/scripts/cpumem.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 498,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										12,
+										12
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Bash.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/home/diego/.fvwm/config",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 18524,
+								"regions":
+								{
+									"col_000000FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6955,
+												6960
+											]
+										],
+										"scope": "col_000000FF"
+									},
+									"col_000000FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_000000FF_circle.png",
+										"regions":
+										[
+											[
+												6931,
+												6931
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_080808FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6936,
+												6943
+											],
+											[
+												7049,
+												7056
+											]
+										],
+										"scope": "col_080808FF"
+									},
+									"col_080808FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_080808FF_circle.png",
+										"regions":
+										[
+											[
+												6931,
+												6931
+											],
+											[
+												7044,
+												7044
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_101010FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6681,
+												6688
+											]
+										],
+										"scope": "col_101010FF"
+									},
+									"col_101010FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_101010FF_circle.png",
+										"regions":
+										[
+											[
+												6654,
+												6654
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_202020FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6610,
+												6617
+											]
+										],
+										"scope": "col_202020FF"
+									},
+									"col_202020FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_202020FF_circle.png",
+										"regions":
+										[
+											[
+												6595,
+												6595
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_232323FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6555,
+												6562
+											]
+										],
+										"scope": "col_232323FF"
+									},
+									"col_232323FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_232323FF_circle.png",
+										"regions":
+										[
+											[
+												6528,
+												6528
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_393939FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6567,
+												6574
+											]
+										],
+										"scope": "col_393939FF"
+									},
+									"col_393939FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_393939FF_circle.png",
+										"regions":
+										[
+											[
+												6528,
+												6528
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_7C37ADFF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6740,
+												6747
+											]
+										],
+										"scope": "col_7C37ADFF"
+									},
+									"col_7C37ADFF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_7C37ADFF_circle.png",
+										"regions":
+										[
+											[
+												6713,
+												6713
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_FF0000FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												7069,
+												7072
+											]
+										],
+										"scope": "col_FF0000FF"
+									},
+									"col_FF0000FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_FF0000FF_circle.png",
+										"regions":
+										[
+											[
+												7044,
+												7044
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_FF9292FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6622,
+												6629
+											]
+										],
+										"scope": "col_FF9292FF"
+									},
+									"col_FF9292FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_FF9292FF_circle.png",
+										"regions":
+										[
+											[
+												6595,
+												6595
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_FFFFFFFF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6543,
+												6550
+											],
+											[
+												6669,
+												6676
+											],
+											[
+												6728,
+												6735
+											],
+											[
+												6910,
+												6915
+											],
+											[
+												7023,
+												7028
+											],
+											[
+												17482,
+												17489
+											]
+										],
+										"scope": "col_FFFFFFFF"
+									},
+									"col_FFFFFFFF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+										"regions":
+										[
+											[
+												6528,
+												6528
+											],
+											[
+												6654,
+												6654
+											],
+											[
+												6713,
+												6713
+											],
+											[
+												6871,
+												6871
+											],
+											[
+												6984,
+												6984
+											],
+											[
+												17457,
+												17457
+											]
+										],
+										"scope": "col_gutter"
+									}
+								},
+								"selection":
+								[
+									[
+										14460,
+										14460
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Bash.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 6819.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/home/diego/.fvwm/FvwmScripts-System",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 685,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										536,
+										536
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Haskell/Haskell.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 5,
+							"type": "text"
+						},
+						{
+							"buffer": 6,
+							"file": "/home/diego/Scripts/cpumem.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 498,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										498,
+										498
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Bash.sublime-syntax",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 6,
+							"type": "text"
+						},
+						{
+							"buffer": 7,
+							"file": "/home/diego/.config/i3/config",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 7175,
+								"regions":
+								{
+									"col_000000FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6250,
+												6257
+											],
+											[
+												6274,
+												6281
+											]
+										],
+										"scope": "col_000000FF"
+									},
+									"col_000000FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_000000FF_circle.png",
+										"regions":
+										[
+											[
+												6225,
+												6225
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_0C0C0CFF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6258,
+												6265
+											],
+											[
+												6284,
+												6291
+											]
+										],
+										"scope": "col_0C0C0CFF"
+									},
+									"col_0C0C0CFF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_0C0C0CFF_circle.png",
+										"regions":
+										[
+											[
+												6225,
+												6225
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_141313FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6048,
+												6055
+											],
+											[
+												6068,
+												6075
+											],
+											[
+												6078,
+												6085
+											],
+											[
+												6111,
+												6118
+											],
+											[
+												6120,
+												6127
+											],
+											[
+												6140,
+												6147
+											],
+											[
+												6150,
+												6157
+											]
+										],
+										"scope": "col_141313FF"
+									},
+									"col_141313FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_141313FF_circle.png",
+										"regions":
+										[
+											[
+												6014,
+												6014
+											],
+											[
+												6086,
+												6086
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_2F343AFF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6183,
+												6190
+											]
+										],
+										"scope": "col_2F343AFF"
+									},
+									"col_2F343AFF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_2F343AFF_circle.png",
+										"regions":
+										[
+											[
+												6158,
+												6158
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_48F191FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												5967,
+												5974
+											],
+											[
+												5976,
+												5983
+											],
+											[
+												5996,
+												6003
+											],
+											[
+												6006,
+												6013
+											]
+										],
+										"scope": "col_48F191FF"
+									},
+									"col_48F191FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_48F191FF_circle.png",
+										"regions":
+										[
+											[
+												5942,
+												5942
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_900000FF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												6191,
+												6198
+											],
+											[
+												6207,
+												6214
+											],
+											[
+												6217,
+												6224
+											]
+										],
+										"scope": "col_900000FF"
+									},
+									"col_900000FF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_900000FF_circle.png",
+										"regions":
+										[
+											[
+												6158,
+												6158
+											]
+										],
+										"scope": "col_gutter"
+									},
+									"col_FFFFFFFF":
+									{
+										"flags": 16,
+										"regions":
+										[
+											[
+												5986,
+												5993
+											],
+											[
+												6039,
+												6046
+											],
+											[
+												6058,
+												6065
+											],
+											[
+												6130,
+												6137
+											],
+											[
+												6199,
+												6206
+											],
+											[
+												6266,
+												6273
+											]
+										],
+										"scope": "col_FFFFFFFF"
+									},
+									"col_FFFFFFFF_icon":
+									{
+										"flags": 16,
+										"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+										"regions":
+										[
+											[
+												5942,
+												5942
+											],
+											[
+												6014,
+												6014
+											],
+											[
+												6086,
+												6086
+											],
+											[
+												6158,
+												6158
+											],
+											[
+												6225,
+												6225
+											]
+										],
+										"scope": "col_gutter"
+									}
+								},
+								"selection":
+								[
+									[
+										1647,
+										1715
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 8,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 405.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 7,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 24.0
+			},
+			"input":
+			{
+				"height": 30.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.exec":
+			{
+				"height": 104.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,0,31,1449,898,1600,900",
+			"project": "",
+			"replace":
+			{
+				"height": 44.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 220.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+			"/home/diego/.config/polybar/scripts/animations.sublime-workspace"
+		]
+	}
+}

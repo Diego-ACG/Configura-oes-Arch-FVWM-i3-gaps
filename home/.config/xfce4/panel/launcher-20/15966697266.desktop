@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=FaceBoock
+Comment=
+Exec=chromium facebook.com
+Icon=/home/diego/.icons/Facebook_icon-icons.com_66805.png
+Path=
+Terminal=false
+StartupNotify=false

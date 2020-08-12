@@ -1,0 +1,13 @@
+[Added Associations]
+inode/directory=exo-file-manager.desktop;
+x-scheme-handler/trash=exo-file-manager.desktop;
+x-scheme-handler/http=exo-web-browser.desktop;chromium.desktop;
+x-scheme-handler/https=exo-web-browser.desktop;chromium.desktop;
+application/xhtml+xml=chromium.desktop;
+text/html=chromium.desktop;
+
+[Default Applications]
+x-scheme-handler/http=chromium.desktop
+application/xhtml+xml=chromium.desktop
+text/html=chromium.desktop
+x-scheme-handler/https=chromium.desktop

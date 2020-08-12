@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=YouTube
+Comment=
+Exec=chromium youtube.com
+Icon=/home/diego/.icons/YouTube_23392.png
+Path=
+Terminal=false
+StartupNotify=false

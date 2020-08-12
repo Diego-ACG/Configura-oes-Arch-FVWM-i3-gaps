@@ -1,0 +1,15 @@
+2020/08/11-21:06:18.265 382 Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/11-21:06:18.276 382 Recovering log #323
+2020/08/11-21:06:18.316 382 Reusing old log /home/diego/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000323.log 
+2020/08/11-21:06:55.672 558 Level-0 table #328: started
+2020/08/11-21:06:55.702 558 Level-0 table #328: 12155 bytes OK
+2020/08/11-21:06:55.730 558 Delete type=0 #323
+2020/08/11-21:06:55.730 558 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/11-21:06:55.730 558 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x16\x00a\x00p\x00p\x00l\x00i\x00c\x00a\x00t\x00i\x00o\x00n\x00_\x00s\x00e\x00r\x00v\x00e\x00r\x00_\x00k\x00e\x00y' @ 48401 : 1
+2020/08/11-21:06:55.730 558 Compacting 1@1 + 1@2 files
+2020/08/11-21:06:55.769 558 Generated table #329@1: 48 keys, 2346 bytes
+2020/08/11-21:06:55.769 558 Compacted 1@1 + 1@2 files => 2346 bytes
+2020/08/11-21:06:55.796 558 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/11-21:06:55.796 558 Delete type=2 #328
+2020/08/11-21:06:55.796 558 Delete type=2 #325
+2020/08/11-21:06:55.797 558 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x16\x00a\x00p\x00p\x00l\x00i\x00c\x00a\x00t\x00i\x00o\x00n\x00_\x00s\x00e\x00r\x00v\x00e\x00r\x00_\x00k\x00e\x00y' @ 48401 : 1 .. (end); will stop at (end)

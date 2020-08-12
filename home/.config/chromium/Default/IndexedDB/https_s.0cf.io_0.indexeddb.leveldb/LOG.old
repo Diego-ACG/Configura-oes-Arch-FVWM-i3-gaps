@@ -1,0 +1,8 @@
+2020/08/10-19:51:23.095 3a408 Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_s.0cf.io_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/10-19:51:23.095 3a408 Recovering log #4
+2020/08/10-19:51:23.095 3a408 Reusing old log /home/diego/.config/chromium/Default/IndexedDB/https_s.0cf.io_0.indexeddb.leveldb/000004.log 
+2020/08/10-19:52:04.508 1c41e Level-0 table #8: started
+2020/08/10-19:52:04.508 1c41e Level-0 table #8: 0 bytes OK
+2020/08/10-19:52:04.535 1c41e Delete type=0 #4
+2020/08/10-19:52:04.537 1c41e Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/10-19:52:04.537 1c41e Manual compaction at level-1 from (begin) .. (end); will stop at (end)

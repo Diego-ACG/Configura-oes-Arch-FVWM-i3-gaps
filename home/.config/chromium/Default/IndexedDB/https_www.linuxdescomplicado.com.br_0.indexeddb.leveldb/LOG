@@ -1,0 +1,17 @@
+2020/08/02-19:52:31.245 78b3c Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_www.linuxdescomplicado.com.br_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/02-19:53:31.607 7b0e6 Level-0 table #5: started
+2020/08/02-19:53:31.663 7b0e6 Level-0 table #5: 6394 bytes OK
+2020/08/02-19:53:31.696 7b0e6 Delete type=0 #3
+2020/08/02-19:53:31.697 7b0e6 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2020/08/02-20:03:57.371 7b0e6 Level-0 table #7: started
+2020/08/02-20:03:57.422 7b0e6 Level-0 table #7: 212 bytes OK
+2020/08/02-20:03:57.453 7b0e6 Delete type=0 #4
+2020/08/02-20:03:57.453 7b0e6 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/02-20:03:57.453 7b0e6 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02Q\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 409 : 0
+2020/08/02-20:03:57.453 7b0e6 Compacting 1@1 + 1@2 files
+2020/08/02-20:03:57.481 7b0e6 Generated table #8@1: 97 keys, 2273 bytes
+2020/08/02-20:03:57.481 7b0e6 Compacted 1@1 + 1@2 files => 2273 bytes
+2020/08/02-20:03:57.513 7b0e6 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/02-20:03:57.513 7b0e6 Delete type=2 #5
+2020/08/02-20:03:57.513 7b0e6 Delete type=2 #7
+2020/08/02-20:03:57.513 7b0e6 Manual compaction at level-1 from '\x00\x00\x00\x002\x02Q\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 409 : 0 .. (end); will stop at (end)

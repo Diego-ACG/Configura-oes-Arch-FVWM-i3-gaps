@@ -1,0 +1,235 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #00000000
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+#===============================
+# Settings
+#===============================
+
+[bar/top-bar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 2
+border-color = #00000000
+
+font-0 = Iosevka:style=Bold:size=13;3
+font-1= Open24DisplayST:style=Bold:size=18;3
+font-2 = Iosevka:style=Bold:size=9;2
+
+
+modules-left = arch i3
+modules-center = net util
+modules-right = pulseaudio unic clock
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+#===========================
+# Modules
+#===========================
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+
+format = <label-state>
+
+label-focused-font = 1
+label-focused = 
+label-focused-foreground = #adff00
+label-focused-padding = 1
+
+label-unfocused-font = 1
+label-unfocused = ⭘
+label-unfocused-foreground = #fff
+label-unfocused-padding = 1
+
+label-visible-font = 1
+label-visible = 
+label-visible-foreground = #ff0000
+label-visible-padding = 1
+
+label-urgent-font = 1
+label-urgent = ⭘
+label-urgent-foreground = #ff0000
+label-urgent-padding = 1
+
+#=====================================
+
+[module/clock]
+type = internal/date
+label = %time%
+interval = 1.0
+time = %{F#99E800}%H%{F}:%{F#99E800}%M%{F}
+label-padding = 1
+label-font = 2
+label-background = #9E1c3146
+
+#===============================
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+label-volume = %percentage%%
+label-volume-foreground = #FFFFFF
+
+label-muted =  muted
+label-muted-foreground = ${xrdb:color7:#666}
+
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${xrdb:color2:#55aa55}
+bar-volume-foreground-1 = ${xrdb:color2:#55aa55}
+bar-volume-foreground-2 = ${xrdb:color2:#55aa55}
+bar-volume-foreground-3 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-4 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-5 = ${xrdb:color10:#f5a70a}
+bar-volume-foreground-6 = ${xrdb:color10:#ff5555}
+bar-volume-foreground-7 = ${xrdb:color10:#ff5555}
+bar-volume-foreground-8 = ${xrdb:color9:#ff5555}
+bar-volume-foreground-9 = ${xrdb:color9:#ff5555}
+bar-volume-gradient = false
+bar-volume-indicator = █
+bar-volume-indicator-font = 3
+bar-volume-fill = █
+bar-volume-fill-font = 3
+bar-volume-empty = ▒
+bar-volume-empty-font = 3
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #FFFFFF
+
+
+#===============================
+
+[module/arch]
+type = custom/script
+exec = sh .config/polybar/scripts/arch.sh
+label-padding = 1
+label-background = #9E1c3146
+label-font = 1
+interval = 0.1
+click-left = xdotool key super+d
+
+#================================
+
+[module/unic]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/pacman.sh
+label-padding = 1
+interval = 0.1
+
+#================================
+
+[module/net]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/low.sh 2> /dev/null
+inteval = 0.1
+
+#================================
+
+[module/util]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/util.sh 2> /dev/null
+inteval = 0.1
+
+#================================
+#===============================
+#===============================
+
+[bar/bottom-bar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 2
+border-color = #00000000
+
+font-0 = Iosevka:style=Bold:size=13;3
+font-1= Open24DisplayST:style=Bold:size=18;3
+font-2 = Iosevka:style=Bold:size=18;4
+font-3 = UbuntuMono Nerd Font:style=Bold:size=14;3
+
+
+modules-left = slogan
+modules-center = 
+modules-right = cpumem disk power
+
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+#===========================
+# Modules
+#===========================
+
+[module/power]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/power.sh
+inteval = 0.1
+
+#================================
+
+[module/slogan]
+type = custom/script
+exec = sh .config/polybar/scripts/slogan.sh
+interval = 0.1
+label-padding = 1
+
+#================================
+
+[module/disk]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/disks.sh
+label-padding = 1
+inteval = 0.1
+
+#================================
+
+[module/cpumem]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/cpumem.sh
+inteval = 0.1

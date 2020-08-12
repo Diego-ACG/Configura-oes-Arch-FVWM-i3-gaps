@@ -1,0 +1,15 @@
+2020/08/07-18:44:31.587 324cc Reusing MANIFEST /home/diego/.config/chromium/Default/IndexedDB/https_pxlclnmdecom-a.akamaihd.net_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/07-18:44:31.588 324cc Recovering log #11
+2020/08/07-18:44:31.588 324cc Reusing old log /home/diego/.config/chromium/Default/IndexedDB/https_pxlclnmdecom-a.akamaihd.net_0.indexeddb.leveldb/000011.log 
+2020/08/07-18:44:33.783 32847 Level-0 table #16: started
+2020/08/07-18:44:33.822 32847 Level-0 table #16: 483 bytes OK
+2020/08/07-18:44:33.855 32847 Delete type=0 #11
+2020/08/07-18:44:33.855 32847 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/07-18:44:33.856 32847 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x06\x00b\x00a\x00f\x00p\x00_\x00t' @ 86 : 1
+2020/08/07-18:44:33.856 32847 Compacting 1@1 + 1@2 files
+2020/08/07-18:44:33.890 32847 Generated table #17@1: 20 keys, 625 bytes
+2020/08/07-18:44:33.890 32847 Compacted 1@1 + 1@2 files => 625 bytes
+2020/08/07-18:44:33.921 32847 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/07-18:44:33.921 32847 Delete type=2 #16
+2020/08/07-18:44:33.921 32847 Delete type=2 #13
+2020/08/07-18:44:33.921 32847 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x06\x00b\x00a\x00f\x00p\x00_\x00t' @ 86 : 1 .. (end); will stop at (end)
